@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yyzz2 | Hardware & AI Engineering</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+            --secondary: #94a3b8;
+        }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent); }
+        .subtitle { font-size: 1.2rem; color: var(--secondary); margin-bottom: 2rem; }
+        
+        .section { margin-bottom: 3rem; }
+        h2 { border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-top: 0; color: var(--accent); }
+        
+        .tag {
+            display: inline-block;
+            background: #334155;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+        footer { text-align: center; padding: 2rem; color: var(--secondary); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>yyzz2</h1>
+    <div class="subtitle">Semiconductor Engineering & AI Development</div>
+</header>
+
+<div class="container">
+    <section class="section">
+        <h2>Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>ASIC & Emulation</h3>
+                <p>Specializing in RTL design, AMBA AXI protocols, and large-scale hardware emulation using ZeBu (ZWD).</p>
+            </div>
+            <div class="card">
+                <h3>AI & Automation</h3>
+                <p>Building agentic workflows with Gemini, Claude Code, and custom CLI tools for developer productivity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>PowerStock</h3>
+                <p>A Firebase-backed stock analysis platform focusing on technical indicators and market liquidity.</p>
+                <span class="tag">Firebase</span><span class="tag">TypeScript</span>
+            </div>
+            <div class="card">
+                <h3>TradingView SMC</h3>
+                <p>Custom Pine Script v6 implementation of Smart Money Concepts and Market Structure analysis.</p>
+                <span class="tag">Pine Script</span><span class="tag">TradingView</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Interests</h2>
+        <p>Beyond engineering, I'm active in the SF Bay Area tech scene, 3D printing (Bambu Lab), and exploring system modifications for high-performance computing.</p>
+    </section>
+</div>
+
+<footer>
+    &copy; 2026 yyzz2. Built with GitHub Pages.
+</footer>
+
+</body>
+</html>
