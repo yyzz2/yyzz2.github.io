@@ -1,113 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yyzz2 | Hardware & AI Engineering</title>
-    <style>
-        :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text: #f8fafc;
-            --accent: #38bdf8;
-            --secondary: #94a3b8;
-        }
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            padding: 4rem 2rem;
-            text-align: center;
-            background: linear-gradient(to bottom, #1e293b, #0f172a);
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent); }
-        .subtitle { font-size: 1.2rem; color: var(--secondary); margin-bottom: 2rem; }
-        
-        .section { margin-bottom: 3rem; }
-        h2 { border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { margin-top: 0; color: var(--accent); }
-        
-        .tag {
-            display: inline-block;
-            background: #334155;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-        }
-        footer { text-align: center; padding: 2rem; color: var(--secondary); font-size: 0.9rem; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="yyzz2 explores semiconductor engineering, AI development, and tools for understanding markets.">
+  <title>yyzz2 — Hardware, AI &amp; ideas</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0c1422; --panel:#141f30; --text:#eef3f7; --muted:#a9b8c7; --accent:#8de0d2; --line:#2a3b4d; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:inherit; }
+    a:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+    .wrap { width:min(1080px, calc(100% - 48px)); margin:auto; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:25px 0; border-bottom:1px solid var(--line); }
+    .brand { font-weight:750; font-size:1.15rem; letter-spacing:-.04em; text-decoration:none; }
+    .brand span { color:var(--accent); }
+    nav { display:flex; flex-wrap:wrap; gap:24px; font-size:.88rem; color:var(--muted); }
+    nav a { text-decoration:none; } nav a:hover { color:var(--text); }
+    .hero { display:grid; grid-template-columns:1.4fr .6fr; gap:60px; align-items:end; padding:100px 0 105px; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.16em; font-size:.73rem; font-weight:700; }
+    h1 { font-size:clamp(3.2rem,7vw,6.2rem); line-height:1.02; letter-spacing:-.065em; margin:24px 0; max-width:760px; }
+    h1 em { font-style:normal; color:var(--accent); }
+    .intro { color:var(--muted); font-size:1.15rem; max-width:590px; }
+    .actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+    .button { display:inline-block; padding:12px 19px; border:1px solid var(--line); border-radius:5px; font-size:.9rem; font-weight:650; text-decoration:none; }
+    .button.primary { background:var(--accent); color:#102320; border-color:var(--accent); }
+    .button:hover { filter:brightness(1.12); }
+    .hero-note { border-left:1px solid var(--line); padding-left:25px; color:var(--muted); font-size:.9rem; }
+    .hero-note strong { color:var(--text); display:block; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; }
+    section { padding:72px 0; border-top:1px solid var(--line); }
+    .section-head { display:grid; grid-template-columns:1fr 2fr; gap:30px; margin-bottom:36px; }
+    .section-head h2 { font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:8px 0; }
+    .section-head p { margin:0; max-width:690px; font-size:clamp(1.6rem,3vw,2.3rem); line-height:1.25; letter-spacing:-.035em; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:28px; }
+    .number { color:var(--accent); font-size:.75rem; letter-spacing:.1em; }
+    .card h3 { font-size:1.35rem; letter-spacing:-.03em; margin:24px 0 8px; }
+    .card p { color:var(--muted); margin:0; }
+    .tags { display:flex; gap:8px; flex-wrap:wrap; margin-top:25px; }
+    .tag { border:1px solid #3b5060; border-radius:50px; color:#c4d4dd; font-size:.72rem; padding:3px 10px; }
+    .interests { color:var(--muted); max-width:690px; margin:0 0 0 auto; font-size:1.04rem; }
+    footer { border-top:1px solid var(--line); padding:28px 0 38px; color:var(--muted); font-size:.85rem; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media (max-width:700px) { .wrap { width:min(100% - 36px,1080px); } .topbar { align-items:flex-start; } nav { gap:14px; justify-content:flex-end; } .hero { grid-template-columns:1fr; gap:36px; padding:72px 0; } .hero-note { max-width:400px; } section { padding:55px 0; } .section-head { grid-template-columns:1fr; gap:12px; } .grid { grid-template-columns:1fr; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>yyzz2</h1>
-    <div class="subtitle">Semiconductor Engineering & AI Development</div>
-</header>
-
-<div class="container">
-    <section class="section">
-        <h2>Expertise</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>ASIC & Emulation</h3>
-                <p>Specializing in RTL design, AMBA AXI protocols, and large-scale hardware emulation using ZeBu (ZWD).</p>
-            </div>
-            <div class="card">
-                <h3>AI & Automation</h3>
-                <p>Building agentic workflows with Gemini, Claude Code, and custom CLI tools for developer productivity.</p>
-            </div>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="yyzz2 home">yyzz2<span>.</span></a>
+      <nav aria-label="Main navigation"><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="https://github.com/yyzz2">GitHub ↗</a></nav>
+    </header>
+    <main id="top">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Hardware · AI · Exploration</div>
+          <h1>Engineering from <em>silicon</em> to software.</h1>
+          <p class="intro">Hi, I’m yyzz2. I explore semiconductor engineering, AI development, and practical tools for making sense of complex systems.</p>
+          <div class="actions"><a class="button primary" href="#projects">Explore projects ↓</a><a class="button" href="https://github.com/yyzz2">View GitHub ↗</a></div>
         </div>
-    </section>
-
-    <section class="section">
-        <h2>Projects</h2>
+        <aside class="hero-note"><strong>Areas of interest</strong>RTL design and emulation, agentic workflows, market analysis, and hands-on experimentation.</aside>
+      </div>
+      <section id="expertise">
+        <div class="section-head"><h2>01 / Expertise</h2><p>Working across hardware and the tools that help us build it.</p></div>
         <div class="grid">
-            <div class="card">
-                <h3>PowerStock</h3>
-                <p>A Firebase-backed stock analysis platform focusing on technical indicators and market liquidity.</p>
-                <span class="tag">Firebase</span><span class="tag">TypeScript</span>
-            </div>
-            <div class="card">
-                <h3>TradingView SMC</h3>
-                <p>Custom Pine Script v6 implementation of Smart Money Concepts and Market Structure analysis.</p>
-                <span class="tag">Pine Script</span><span class="tag">TradingView</span>
-            </div>
+          <article class="card"><span class="number">01 — HARDWARE</span><h3>ASIC &amp; emulation</h3><p>RTL design, AMBA AXI protocols, and large-scale hardware emulation using ZeBu (ZWD).</p></article>
+          <article class="card"><span class="number">02 — SOFTWARE</span><h3>AI &amp; automation</h3><p>Exploring agentic workflows with Gemini, Claude Code, and custom CLI tools for developer productivity.</p></article>
         </div>
-    </section>
-
-    <section class="section">
-        <h2>Interests</h2>
-        <p>Beyond engineering, I'm active in the SF Bay Area tech scene, 3D printing (Bambu Lab), and exploring system modifications for high-performance computing.</p>
-    </section>
-</div>
-
-<footer>
-    &copy; 2026 yyzz2. Built with GitHub Pages.
-</footer>
-
+      </section>
+      <section id="projects">
+        <div class="section-head"><h2>02 / Projects</h2><p>Ideas and experiments at the intersection of data and technology.</p></div>
+        <div class="grid">
+          <article class="card"><span class="number">MARKET ANALYSIS</span><h3>PowerStock</h3><p>A Firebase-backed stock analysis platform focused on technical indicators and market liquidity.</p><div class="tags"><span class="tag">Firebase</span><span class="tag">TypeScript</span></div></article>
+          <article class="card"><span class="number">MARKET STRUCTURE</span><h3>TradingView SMC</h3><p>A Pine Script v6 implementation of Smart Money Concepts and market structure analysis.</p><div class="tags"><span class="tag">Pine Script</span><span class="tag">TradingView</span></div></article>
+        </div>
+      </section>
+      <section id="interests">
+        <div class="section-head"><h2>03 / Beyond the screen</h2><p>Curiosity doesn’t stop at the keyboard.</p></div>
+        <p class="interests">Outside of engineering, I’m interested in the SF Bay Area tech scene, 3D printing with Bambu Lab, and exploring system modifications for high-performance computing.</p>
+      </section>
+    </main>
+    <footer><div class="footer-row"><span>© 2026 yyzz2 · Built with GitHub Pages</span><a href="https://github.com/yyzz2">Find me on GitHub ↗</a></div></footer>
+  </div>
 </body>
 </html>
